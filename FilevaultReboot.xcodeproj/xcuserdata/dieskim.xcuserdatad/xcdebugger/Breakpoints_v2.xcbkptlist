@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DA9BF91D-0DDB-4CCB-B84A-D492C43A7013"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF786D1A-B12F-4421-BB98-FA52D2185C72"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilevaultReboot/FilevaultRebootApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "FilevaultRebootApp"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "DF786D1A-B12F-4421-BB98-FA52D2185C72 - fa18ebce30b6050d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static FilevaultReboot.FilevaultRebootApp.$main() -&gt; ()"
+                  moduleName = "FilevaultReboot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dieskim/Dropbox/Julula/FilevaultReboot/FilevaultReboot/FilevaultRebootApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  uuid = "DF786D1A-B12F-4421-BB98-FA52D2185C72 - fa18ebce30b6050d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static FilevaultReboot.FilevaultRebootApp.$main() -&gt; ()"
+                  moduleName = "FilevaultReboot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dieskim/Dropbox/Julula/FilevaultReboot/FilevaultReboot/FilevaultRebootApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "7">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64E1E475-9366-4676-8578-06C7111D0730"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilevaultReboot/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

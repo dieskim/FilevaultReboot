@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8628B4D2A320BEB00DF8E04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8628B4C2A320BEB00DF8E04 /* ContentView.swift */; };
 		A8B2E7A82A31B49E002F4039 /* FilevaultRebootApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E7A72A31B49E002F4039 /* FilevaultRebootApp.swift */; };
-		A8B2E7AA2A31B49E002F4039 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E7A92A31B49E002F4039 /* ContentView.swift */; };
 		A8B2E7AC2A31B4A1002F4039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B2E7AB2A31B4A1002F4039 /* Assets.xcassets */; };
 		A8B2E7AF2A31B4A1002F4039 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B2E7AE2A31B4A1002F4039 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8628B4C2A320BEB00DF8E04 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A8B2E7A42A31B49E002F4039 /* FilevaultReboot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilevaultReboot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B2E7A72A31B49E002F4039 /* FilevaultRebootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilevaultRebootApp.swift; sourceTree = "<group>"; };
-		A8B2E7A92A31B49E002F4039 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A8B2E7AB2A31B4A1002F4039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8B2E7AE2A31B4A1002F4039 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A8B2E7B02A31B4A1002F4039 /* FilevaultReboot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilevaultReboot.entitlements; sourceTree = "<group>"; };
+		A8B2E7B62A31C572002F4039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +53,9 @@
 		A8B2E7A62A31B49E002F4039 /* FilevaultReboot */ = {
 			isa = PBXGroup;
 			children = (
+				A8B2E7B62A31C572002F4039 /* Info.plist */,
 				A8B2E7A72A31B49E002F4039 /* FilevaultRebootApp.swift */,
-				A8B2E7A92A31B49E002F4039 /* ContentView.swift */,
+				A8628B4C2A320BEB00DF8E04 /* ContentView.swift */,
 				A8B2E7AB2A31B4A1002F4039 /* Assets.xcassets */,
 				A8B2E7B02A31B4A1002F4039 /* FilevaultReboot.entitlements */,
 				A8B2E7AD2A31B4A1002F4039 /* Preview Content */,
@@ -139,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8B2E7AA2A31B49E002F4039 /* ContentView.swift in Sources */,
+				A8628B4D2A320BEB00DF8E04 /* ContentView.swift in Sources */,
 				A8B2E7A82A31B49E002F4039 /* FilevaultRebootApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +199,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -272,6 +274,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FilevaultReboot/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilevaultReboot/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,6 +302,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FilevaultReboot/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilevaultReboot/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
