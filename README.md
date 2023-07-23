@@ -1,5 +1,9 @@
 # FilevaultReboot
-A simple MacOS Menu Bar app that allows you to initial a FileVault Restart. Provided as Open Source for Security of the end user. Any Support appreciated.
+A simple MacOS Menu Bar app that allows you to initiate a FileVault Restart. This app allows for easier / more automated “fdesetup authrestart” by simply supplying your password. 
+
+This is especially useful for remotely managed systems that you want to reboot, that have FileVault enabled since it will allow the Mac to reboot and be managed after reboot.
+
+Provided as Open Source for Security of the end user. Any Support appreciated.
 
 <a href="https://www.buymeacoffee.com/dieskim" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
