@@ -1,12 +1,13 @@
 import Cocoa
 import SwiftUI
+import LaunchAtLogin
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItem: NSStatusItem?
     @IBOutlet weak var statusMenu: NSMenu!
-
+    
     let popover = NSPopover()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -20,8 +21,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         popover.contentViewController = NSHostingController(rootView: contentView)
         popover.behavior = .transient
+        
+        // enable LaunchAtLogin
+        LaunchAtLogin.isEnabled = true
+        
     }
-
+    
+    
     @objc func togglePopover(_ sender: AnyObject) {
         if let button = statusItem?.button {
             if popover.isShown {
