@@ -104,15 +104,30 @@ struct ContentView: View {
                     Button(shutdownButtonTitle, action: {
                             rebootShutdown(action: "shutdown")
                         })
-                        .buttonStyle(.borderedProminent)
-                        .padding(.top, 10)
-                        .disabled(!buttonsEnabled)
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.leading, 5)
+                    .padding(.trailing, 5)
+                    .padding(.top, 2)
+                    .padding(.bottom, 2)
+                    .background(Color(red: 0.22, green: 0.46, blue: 0.85))
+                    .foregroundColor(Color.white)
+                    .cornerRadius(5)
+                    .padding(.top, 10)
+                    .disabled(!buttonsEnabled)
+                    
                 }
                 if !isRestartButtonHidden {
                     Button(restartButtonTitle, action: {
-                        rebootShutdown(action: "restart")
-                    })
-                    .buttonStyle(.borderedProminent)
+                            rebootShutdown(action: "restart")
+                        })
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.leading, 5)
+                    .padding(.trailing, 5)
+                    .padding(.top, 2)
+                    .padding(.bottom, 2)
+                    .background(Color(red: 0.22, green: 0.46, blue: 0.85))
+                    .foregroundColor(Color.white)
+                    .cornerRadius(5)
                     .padding(.top, 10)
                     .disabled(!buttonsEnabled)
                 }
