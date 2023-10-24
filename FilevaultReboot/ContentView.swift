@@ -8,13 +8,21 @@ import SwiftUI
 import Foundation
 
 
-func runScript(username: String,password: String) -> Bool{
-       
+func runScript(scriptAction: String, username: String,password: String) -> Bool{
+    
+    var delayminutes = 0
+    
+    if scriptAction == "shutdown" {
+        delayminutes = -1
+    } else if scriptAction == "restart" {
+        delayminutes = 0
+    }
+    
     let rebootProcess = Process()
     rebootProcess.launchPath = "/usr/bin/expect"
     rebootProcess.arguments = ["-c", """
                         set timeout -1
-                        spawn sudo fdesetup authrestart
+                        spawn sudo fdesetup authrestart -delayminutes \(delayminutes)
                         expect \"Password:\"
                         send \"\(password)\r\"
                         expect {
@@ -28,6 +36,7 @@ func runScript(username: String,password: String) -> Bool{
                         expect \"Enter the password for user '\(username)':\"
                         send \"\(password)\r\"
                         expect eof
+                        spawn sudo shutdown -h now
                     """]
     
     //let rebootProcessIn = Pipe()
@@ -74,38 +83,77 @@ struct ContentView: View {
     @State private var username = NSUserName()
     @State private var password = ""
     @State var attempts: Int = 0
-    @State var buttonTitle: String = "Restart"
+    @State private var buttonsEnabled = true
+    @State private var isRestartButtonHidden = false
+    @State private var isShutdownButtonHidden = false
+    @State var restartButtonTitle: String = "Restart"
+    @State var shutdownButtonTitle: String = "Shut Down"
     
     var body: some View {
         VStack {
-            Text("Enter admin credentials for FileVault restart")
+            Text("Enter your Admin Password to bypass the \ninitial FileVault unlock on the next boot")
+                .fixedSize(horizontal: true, vertical: false)
+                .multilineTextAlignment(.leading)
             //TextField("Username", text: $username)
             HStack {
                 Image(systemName: "lock")
-                SecureField("Password", text: $password).modifier(Shake(animatableData: CGFloat(attempts))).onSubmit{reboot()}
+                SecureField("Password", text: $password).modifier(Shake(animatableData: CGFloat(attempts)))//.onSubmit{rebootShutdown()}
             }
-            Button(buttonTitle, action: reboot).buttonStyle(.borderedProminent).padding(.top, 10)
+            HStack {
+                if !isShutdownButtonHidden {
+                    Button(shutdownButtonTitle, action: {
+                            rebootShutdown(action: "shutdown")
+                        })
+                        .buttonStyle(.borderedProminent)
+                        .padding(.top, 10)
+                        .disabled(!buttonsEnabled)
+                }
+                if !isRestartButtonHidden {
+                    Button(restartButtonTitle, action: {
+                        rebootShutdown(action: "restart")
+                    })
+                    .buttonStyle(.borderedProminent)
+                    .padding(.top, 10)
+                    .disabled(!buttonsEnabled)
+                }
+            }
         }
         .padding()
     }
     
-    func reboot() {
+    func rebootShutdown(action: String) {
         if username != "" && password != "" {
             print("Got Username and Password")
             //print(username)
             //print(password)
             
-            // start reboot attempt
-            buttonTitle = "Restarting"
-            let scriptResult = runScript(username: username,password: password)
+            // disable buttons
+            
+            buttonsEnabled = false
+            if action == "shutdown" {
+                print("shutdown")
+                isRestartButtonHidden = true
+                shutdownButtonTitle = "Shutting Down..."
+            } else if action == "restart" {
+                print("restart")
+                isShutdownButtonHidden = true
+                restartButtonTitle = "Restarting..."
+            }
+
+            let scriptResult = runScript(scriptAction: action, username: username,password: password)
             
             // reboot failed resetting
             if scriptResult != true {
                 password = ""
-                buttonTitle = "Restart"
+                isRestartButtonHidden = false
+                isShutdownButtonHidden = false
+                restartButtonTitle = "Restart"
+                shutdownButtonTitle = "Shut Down"
                 withAnimation(.default) {
                                     self.attempts += 1
                                 }
+                // re-enable buttons
+                buttonsEnabled = true
             }
             
         } else {
