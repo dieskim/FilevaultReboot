@@ -37,6 +37,9 @@ func runScript(scriptAction: String, username: String,password: String) -> Bool{
                         send \"\(password)\r\"
                         expect eof
                         spawn sudo shutdown -h now
+                        expect \"Password:\"
+                        send \"\(password)\r\"
+                        expect eof
                     """]
     
     //let rebootProcessIn = Pipe()
